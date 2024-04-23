@@ -52,7 +52,7 @@ model = OGLE().to(device)
 loss_fn = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.00001)
 
-epochs = 1000
+epochs = 300
 
 scaler = GradScaler()
 for epoch in range(epochs):

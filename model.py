@@ -9,7 +9,7 @@ from torch.cuda.amp import autocast, GradScaler
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 torch.cuda.empty_cache()
 
-data = np.genfromtxt('/home/pplonka/Pobrane/Cefeidy.txt', dtype=[('Nazwa', 'S20'), ('Typ', 'S5'), ('P1', 'f8'), ('A1', 'f8'), ('R2_1', 'f8'), ('phi21_1', 'f8'), ('R31_1', 'f8'), ('phi31_1', 'f8')])
+data = np.genfromtxt('Cefeidy.txt', dtype=[('Nazwa', 'S20'), ('Typ', 'S5'), ('P1', 'f8'), ('A1', 'f8'), ('R2_1', 'f8'), ('phi21_1', 'f8'), ('R31_1', 'f8'), ('phi31_1', 'f8')])
 for field in data.dtype.names:
     data[field] = np.where(data[field] == -99.99, 0, data[field])
 
